@@ -1,11 +1,11 @@
 fprintf('Eating Avocados ...\n');
 fprintf('Loading Data ...\n');
 pkg load io;
-data = xlsread('avocadoData.xlsx', 'Sheet1', 'B2:S34');
+data = xlsread('avocadoData.xlsx', 'Sheet1', 'B2:T38');
 
 %Load data
-X = data(:,1:15);
-y = data(:,18);
+X = data(:,[1:4,6:16]); %remove 5th feature
+y = data(:,size(data, 2));
 m = length(y);
 
 %Convert day of year into a continuous function
