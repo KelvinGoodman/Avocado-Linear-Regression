@@ -1,4 +1,5 @@
 function [X_norm, mu, sigma] = featureNormalize(X)
+  disp('Normalizing features...');
   X_norm = X;
   mu = zeros(1, size(X, 2));
   sigma = zeros(1, size(X, 2));

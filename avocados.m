@@ -37,4 +37,7 @@ num_iters = 100000;
 
 % Init Theta and Run Gradient Descent 
 theta = zeros(columns(XTrain), 1);
-gradientDescent(XTrain, yTrain, theta, alpha, num_iters)
+[theta, J_history] = gradientDescent(XTrain, yTrain, theta, alpha, num_iters);
+
+printf('J training data: %f \n', costFunction(XTrain, yTrain, theta));
+printf('J validation data: %f \n', costFunction(XVal, yVal, theta));
